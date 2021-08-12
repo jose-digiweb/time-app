@@ -1,4 +1,9 @@
+import { render } from 'react-dom';
+import React from 'react';
+import Header from './Header';
 import './styles/index.scss';
+
+render(<Header />, document.getElementById('root'));
 
 const obj = {
   ld: 1,
