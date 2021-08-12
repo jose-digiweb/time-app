@@ -1,0 +1,43 @@
+@use './variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  font-family: variables.$inter;
+  color: variables.$white;
+}
+
+.btn__container {
+  max-width: 146px;
+  max-height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px 8px 21px;
+  border-radius: 50px;
+  background: variables.$white;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  margin-right: 13px;
+  color: variables.$black;
+}
+
+.btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 40px;
+  background: variables.$lightBlack;
+  color: variables.$white;
+  transform: rotate(180deg);
+}

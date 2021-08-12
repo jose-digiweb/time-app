@@ -1,3 +1,5 @@
+import './styles/index.scss';
+
 const obj = {
   ld: 1,
   lb: 2,
