@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "name": "time-app",
+  "version": "1.0.0",
+  "description": "\"# time-app\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jose-digiweb/time-app.git"
+  },
+  "keywords": [],
+  "author": "Jose Furtado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jose-digiweb/time-app/issues"
+  },
+  "homepage": "https://github.com/jose-digiweb/time-app#readme",
+  "devDependencies": {
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "glob-parent": "^5.1.2"
+  }
+}
