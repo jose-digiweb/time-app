@@ -4,4 +4,9 @@ const obj = {
   cf: 3,
 };
 
-console.log(obj);
+const obj2 = {
+  ...obj,
+  gd: 4,
+};
+
+console.log(obj, obj2);

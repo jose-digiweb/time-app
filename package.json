@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/jose-digiweb/time-app#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-loader": "^8.2.2",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
