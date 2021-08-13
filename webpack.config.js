@@ -3,17 +3,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const production = 'development';
-const development = 'development';
-const targetDev = 'web';
-const targetProd = 'browserslist';
-
 const mode =
   process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
+const target = mode === 'production' ? 'browserslist' : 'web';
+
 module.exports = {
   mode: mode,
-  target: 'web',
+  target: target,
 
   output: {
     path: path.resolve(__dirname, 'dist'),
