@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+
+    <title>Clock App</title>
+
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/70e9d60d57.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Link to Sass File -->
+    <link rel="stylesheet" href="./main.css" />
+
+    <!-- Link to JavaScript File -->
+    <script defer="defer" src="./main.js"></script>
+  </head>
+
+  <body>
+    <div class="bg">
+      <div id="root"></div>
+      <div class="wrapper">
+        <div class="quote">
+          <p class="quote__text">
+            “The science of operations, as derived from mathematics more
+            especially, is a science of itself, and has its own abstract truth
+            and value.”
+            <span class="author">Ada Lovelace</span>
+          </p>
+          <span class="reload__btn"><i class="fas fa-sync-alt"></i></span>
+        </div>
+
+        <div class="content">
+          <div class="clock">
+            <div class="greeting">
+              <span class="sun__icon"><i class="fas fa-sun"></i></span>
+              <p class="greeting__text">GOOD MORNING, IT’S CURRENTLY</p>
+            </div>
+
+            <div class="current__time">
+              <span class="time">11:37 </span>
+
+              <span class="country__code">BST</span>
+            </div>
+
+            <div class="current__city">
+              <p class="city__text">IN LONDON, UK</p>
+            </div>
+          </div>
+
+          <div class="btn__wrapper">
+            <div class="btn__container">
+              <span class="btn">more</span>
+
+              <span class="btn__icon">
+                <i class="fas fa-chevron-up"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

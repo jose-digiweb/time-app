@@ -5,9 +5,10 @@
   "description": "\"# time-app\"",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve",
+    "start": "cross-env SERVE=true webpack serve",
     "watch": "webpack --watch",
-    "build": "webpack"
+    "build": "cross-env NODE_ENV=production webpack",
+    "clean": "rm -rf dist"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,10 @@
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.2.0",
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
