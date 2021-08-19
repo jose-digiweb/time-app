@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
 
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon-32x32.png"
+      type="image/x-icon"
+    />
+
     <title>Clock App</title>
 
     <!-- Link to Google Fonts -->
@@ -25,15 +31,18 @@
 
   <body>
     <div class="bg">
-      <div id="root"></div>
       <div class="wrapper">
         <div class="quote">
-          <p class="quote__text">
-            “The science of operations, as derived from mathematics more
-            especially, is a science of itself, and has its own abstract truth
-            and value.”
-            <span class="author">Ada Lovelace</span>
-          </p>
+          <div>
+            <p class="quote__text">
+              “The science of operations, as derived from mathematics more
+              especially, is a science of itself, and has its own abstract truth
+              and value.”
+            </p>
+
+            <p class="author">Ada Lovelace</p>
+          </div>
+
           <span class="reload__btn"><i class="fas fa-sync-alt"></i></span>
         </div>
 
@@ -41,13 +50,16 @@
           <div class="clock">
             <div class="greeting">
               <span class="sun__icon"><i class="fas fa-sun"></i></span>
-              <p class="greeting__text">GOOD MORNING, IT’S CURRENTLY</p>
+
+              <p class="greeting__text">
+                GOOD MORNING<span>, IT’S CURRENTLY</span>
+              </p>
             </div>
 
             <div class="current__time">
-              <span class="time">11:37 </span>
+              <p class="time">11:37</p>
 
-              <span class="country__code">BST</span>
+              <p class="country__code">BST</p>
             </div>
 
             <div class="current__city">
@@ -56,12 +68,37 @@
           </div>
 
           <div class="btn__wrapper">
-            <div class="btn__container">
-              <span class="btn">more</span>
+            <button class="btn__more">
+              <p>less</p>
+              <i class="fas fa-chevron-up"></i>
+            </button>
+          </div>
+        </div>
+      </div>
 
-              <span class="btn__icon">
-                <i class="fas fa-chevron-up"></i>
-              </span>
+      <div class="more__details">
+        <div class="details__wrapper">
+          <div class="left__details">
+            <div class="left__1">
+              <p class="details__title">current timezone</p>
+              <h4 class="details__text">europe/london</h4>
+            </div>
+
+            <div class="left__2">
+              <p class="details__title">day of the year</p>
+              <h4 class="details__text">295</h4>
+            </div>
+          </div>
+
+          <div class="right__details">
+            <div class="right__1">
+              <p class="details__title">current week</p>
+              <h4 class="details__text">5</h4>
+            </div>
+
+            <div class="right__2">
+              <p class="details__title">week number</p>
+              <h4 class="details__text">42</h4>
             </div>
           </div>
         </div>
