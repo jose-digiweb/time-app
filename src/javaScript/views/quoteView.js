@@ -4,7 +4,7 @@ class QuoteView {
   reloadBtn = document.querySelector('.reload__btn');
 
   renderQuote(content, author) {
-    this.quoteEl.textContent = content;
+    this.quoteEl.textContent = `" ${content} "`;
     this.authorEl.textContent = author;
   }
 
