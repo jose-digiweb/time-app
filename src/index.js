@@ -10,6 +10,25 @@ import * as model from './javaScript/model';
 import QuoteView from './javaScript/views/quoteView';
 import TimeView from './javaScript/views/timeView';
 
+function hideAddressBar() {
+  if (!window.location.hash) {
+    if (document.height < window.outerHeight) {
+      document.body.style.height = window.outerHeight + 50 + 'px';
+    }
+
+    setTimeout(function () {
+      window.scrollTo(0, 1);
+    }, 50);
+  }
+}
+
+window.addEventListener('load', function () {
+  if (!window.pageYOffset) {
+    hideAddressBar();
+  }
+});
+window.addEventListener('orientationchange', hideAddressBar);
+
 const quoteControl = async () => {
   try {
     //--> Render Loading Spinner
@@ -51,43 +70,4 @@ const init = () => {
 
 init();
 
-const hideBAr = (function (win) {
-  var doc = win.document;
-
-  // If there's a hash, or addEventListener is undefined, stop here
-  if (!location.hash && win.addEventListener) {
-    //scroll to 1
-    win.scrollTo(0, 1);
-    var scrollTop = 1,
-      getScrollTop = function () {
-        return (
-          win.pageYOffset ||
-          (doc.compatMode === 'CSS1Compat' && doc.documentElement.scrollTop) ||
-          doc.body.scrollTop ||
-          0
-        );
-      },
-      //reset to 0 on bodyready, if needed
-      bodycheck = setInterval(function () {
-        if (doc.body) {
-          clearInterval(bodycheck);
-          scrollTop = getScrollTop();
-          win.scrollTo(0, scrollTop === 1 ? 0 : 1);
-        }
-      }, 15);
-
-    win.addEventListener(
-      'load',
-      function () {
-        setTimeout(function () {
-          //at load, if user hasn't scrolled more than 20 or so...
-          if (getScrollTop() < 20) {
-            //reset to hide addr bar at onload
-            win.scrollTo(0, scrollTop === 1 ? 0 : 1);
-          }
-        }, 0);
-      },
-      false
-    );
-  }
-})(this);
+hideBAr();
