@@ -12,6 +12,10 @@ html {
   color: variables.$white;
 }
 
+.hide {
+  display: none;
+}
+
 .btn__container {
   max-width: 146px;
   max-height: 56px;

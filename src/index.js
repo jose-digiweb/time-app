@@ -1,13 +1,22 @@
+//--> polyfilling
 import 'regenerator-runtime/runtime';
 import 'core-js/stable';
 
+import * as helper from './javaScript/helper';
+
+//--> Importing CSS
 import './styles/index.scss';
 
+//--> Importing Modules
 import * as model from './javaScript/model';
 import QuoteView from './javaScript/views/quoteView';
+import TimeView from './javaScript/views/timeView';
 
-export const quoteControl = async () => {
+const quoteControl = async () => {
   try {
+    //--> Render Loading Spinner
+    QuoteView.renderSpinner();
+
     //--> Loading the Quotes
     await model.loadQuote();
     const { text, author } = model.state.quote;
@@ -19,8 +28,38 @@ export const quoteControl = async () => {
   }
 };
 
+const TimeControl = async () => {
+  try {
+    //--> Render Loading Spinner
+    TimeView.renderSpinner();
+
+    //--> Loading the Time Data
+    await model.loadTime();
+
+    const { countryCode, dateTime, weekDay, yearDay, timeZone, weekNumber } =
+      model.state.time;
+
+    //-->Rendering the Time Infos
+    TimeView.renderTime(dateTime, countryCode, timeZone);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const ip = async () => {
+  try {
+    const data = helper.fetchData(`https://freegeoip.app/json/`);
+
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const init = () => {
   QuoteView.handleQuoteGenerate(quoteControl);
+  TimeControl();
+  ip();
 };
 
 init();
