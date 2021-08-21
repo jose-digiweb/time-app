@@ -2,8 +2,6 @@
 import 'regenerator-runtime/runtime';
 import 'core-js/stable';
 
-import * as helper from './javaScript/helper';
-
 //--> Importing CSS
 import './styles/index.scss';
 
@@ -46,20 +44,9 @@ const TimeControl = async () => {
   }
 };
 
-const ip = async () => {
-  try {
-    const data = helper.fetchData(`https://freegeoip.app/json/`);
-
-    console.log(data);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 const init = () => {
   QuoteView.handleQuoteGenerate(quoteControl);
   TimeControl();
-  ip();
 };
 
 init();
