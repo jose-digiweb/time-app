@@ -10,13 +10,6 @@ import * as model from './javaScript/model';
 import QuoteView from './javaScript/views/quoteView';
 import TimeView from './javaScript/views/timeView';
 
-const appHeight = () => {
-  const doc = document.documentElement;
-  doc.style.setProperty('--app-height', `${window.innerHeight}px`);
-};
-window.addEventListener('resize', appHeight);
-appHeight();
-
 const quoteControl = async () => {
   try {
     //--> Render Loading Spinner
