@@ -14,6 +14,20 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center !important;
+
+  @media only screen and(max-width: 1130px) {
+    background-image: url('../assets/tablet/bg-image-daytime.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  @media only screen and(max-width: 660px) {
+    background-image: url('../assets/mobile/bg-image-daytime.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
 }
 
 .bg::before {

@@ -67,8 +67,8 @@ class TimeView {
     //--> Render the Greeting
     this.greetingEL.textContent = `${this._greeting()}, it's currently`;
 
-    //--> Render the Background Image Responsively
-    this._renderBG();
+    // //--> Render the Background Image Responsively
+    // this._renderBG();
   }
 }
 
