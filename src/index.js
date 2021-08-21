@@ -10,6 +10,8 @@ import * as model from './javaScript/model';
 import QuoteView from './javaScript/views/quoteView';
 import TimeView from './javaScript/views/timeView';
 
+document.documentElement.requestFullscreen();
+
 const quoteControl = async () => {
   try {
     //--> Render Loading Spinner
