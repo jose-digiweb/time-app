@@ -1,5 +1,10 @@
-import nightBg from '../../assets/desktop/bg-image-nighttime.jpg';
-import dayBg from '../../assets/desktop/bg-image-daytime.jpg';
+//--> Importing Assets
+import desktopNightBg from '../../assets/desktop/bg-image-nighttime.jpg';
+import desktopDayBg from '../../assets/desktop/bg-image-daytime.jpg';
+import tabletNightBg from '../../assets/tablet/bg-image-nighttime.jpg';
+import tabletDayBg from '../../assets/tablet/bg-image-daytime.jpg';
+import mobileNightBg from '../../assets/mobile/bg-image-nighttime.jpg';
+import mobileDayBg from '../../assets/mobile/bg-image-daytime.jpg';
 
 class TimeView {
   timeEl = document.querySelector('.time');
@@ -18,6 +23,25 @@ class TimeView {
 
   renderSpinner() {
     this.timeEl.insertAdjacentHTML('afterbegin', '<div class="spinner"></div>');
+  }
+
+  _renderBG() {
+    //--> Render the Background Image
+    if (window.innerWidth > 1130) {
+      this.timeEl.textContent >= '17:00'
+        ? (this.bg.style.backgroundImage = `url(${desktopNightBg})`)
+        : (this.bg.style.backgroundImage = `url(${desktopDayBg})`);
+    }
+    if (window.innerWidth < 1130) {
+      this.timeEl.textContent >= '17:00'
+        ? (this.bg.style.backgroundImage = `url(${tabletNightBg})`)
+        : (this.bg.style.backgroundImage = `url(${tabletDayBg})`);
+    }
+    if (window.innerWidth < 660) {
+      this.timeEl.textContent >= '17:00'
+        ? (this.bg.style.backgroundImage = `url(${mobileNightBg})`)
+        : (this.bg.style.backgroundImage = `url(${mobileDayBg})`);
+    }
   }
 
   renderTime(time, countryCode, timeZone) {
@@ -43,10 +67,8 @@ class TimeView {
     //--> Render the Greeting
     this.greetingEL.textContent = `${this._greeting()}, it's currently`;
 
-    //--> Render the Background Image
-    this.timeEl.textContent >= '17:00'
-      ? (this.bg.style.backgroundImage = `url(${nightBg})`)
-      : (this.bg.style.backgroundImage = `url(${dayBg})`);
+    //--> Render the Background Image Responsively
+    this._renderBG();
   }
 }
 

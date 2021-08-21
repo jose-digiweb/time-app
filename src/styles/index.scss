@@ -14,14 +14,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center !important;
-
-  @media screen and(max-width: 1130px) {
-    background-image: url('../assets/tablet/bg-image-daytime.jpg');
-  }
-
-  @media screen and(max-width: 660px) {
-    background-image: url('../assets/mobile/bg-image-daytime.jpg');
-  }
 }
 
 .bg::before {
@@ -143,13 +135,18 @@
         }
 
         @media screen and(max-width: 660px) {
-          font-size: 15px;
-          letter-spacing: 3px;
+          font-size: 13px;
+          letter-spacing: 2px;
           line-height: 25px;
 
           span {
             display: none;
           }
+        }
+
+        @media screen and(max-width: 350px) {
+          font-size: 10px;
+          letter-spacing: 1.5px;
         }
       }
     }
