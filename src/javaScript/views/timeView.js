@@ -48,7 +48,7 @@ class TimeView {
     );
   }
 
-  renderTime(time, countryCode, timeZone) {
+  renderTime(time, countryCode, timeZone, country) {
     //--> Render the Background Image Responsively
     this._renderBG();
 
@@ -76,10 +76,7 @@ class TimeView {
       this.countryCodeEl.textContent = countryCode;
 
       this.timeZoneEL.style.opacity = '1';
-      this.timeZoneEL.textContent = `IN ${timeZone
-        .toUpperCase()
-        .split('/')
-        .join(', ')}`;
+      this.timeZoneEL.textContent = `IN ${country}, ${timeZone.slice(7)}`;
     }, 1000);
   }
 }

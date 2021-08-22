@@ -9,7 +9,10 @@ import './styles/index.scss';
 import * as model from './javaScript/model';
 import QuoteView from './javaScript/views/quoteView';
 import TimeView from './javaScript/views/timeView';
+import MoreDetailsView from './javaScript/views/moreDetailsView';
 import { fullScreenMode } from './javaScript/views/fullscreenMode';
+
+// console.log(document.querySelector('.quote').clientHeight);
 
 const quoteControl = async () => {
   try {
@@ -35,11 +38,22 @@ const TimeControl = async () => {
     //--> Loading the Time Data
     await model.loadTime();
 
-    const { countryCode, dateTime, weekDay, yearDay, timeZone, weekNumber } =
-      model.state.time;
+    await model.loadIP();
+
+    const {
+      countryCode,
+      dateTime,
+      weekDay,
+      yearDay,
+      timeZone,
+      weekNumber,
+      country,
+    } = model.state.time;
 
     //-->Rendering the Time Infos
-    TimeView.renderTime(dateTime, countryCode, timeZone);
+    TimeView.renderTime(dateTime, countryCode, timeZone, country);
+
+    MoreDetailsView.renderMoreDetails(timeZone, weekDay, yearDay, weekNumber);
   } catch (error) {
     console.log(error);
   }
@@ -48,6 +62,8 @@ const TimeControl = async () => {
 const init = () => {
   fullScreenMode();
   QuoteView.handleQuoteGenerate(quoteControl);
+  MoreDetailsView.handleShowMore();
+  MoreDetailsView.handleShowLess();
   TimeControl();
 };
 
