@@ -4,7 +4,7 @@ import 'core-js/stable';
 
 //--> Importing Helper Functions and Values
 import * as helper from './helper';
-import { QUOTE_URL, TIME_URL, IP_URL } from './config';
+import { QUOTE_URL, TIME_URL, IP2_URL } from './config';
 
 export const state = {
   quote: {
@@ -44,7 +44,9 @@ export const loadTime = async () => {
 
 export const loadIP = async () => {
   try {
-    const ipData = await helper.fetchData(IP_URL);
+    const ipData = await helper.fetchData(IP2_URL);
+
+    console.log(ipData);
 
     state.time.country = ipData.country_name;
   } catch (error) {
