@@ -45,12 +45,8 @@ const TimeControl = async () => {
 };
 
 const init = () => {
-  window.scrollTo(0, 1);
-
   QuoteView.handleQuoteGenerate(quoteControl);
   TimeControl();
 };
 
 init();
-
-hideBAr();
