@@ -6,6 +6,8 @@ import tabletDayBg from '../../assets/tablet/bg-image-daytime.jpg';
 import mobileNightBg from '../../assets/mobile/bg-image-nighttime.jpg';
 import mobileDayBg from '../../assets/mobile/bg-image-daytime.jpg';
 
+import { AFTERNOON, NOON } from '../config';
+
 class TimeView {
   timeWrapper = document.querySelector('.country__code');
   timeEl = document.querySelector('.time');
@@ -17,25 +19,25 @@ class TimeView {
   bg = document.querySelector('.bg');
 
   _greeting() {
-    if (this.timeEl.textContent < '12:00') return 'good morning';
-    if (this.timeEl.textContent < '17:00') return 'good afternoon';
-    if (this.timeEl.textContent >= '17:00') return 'good evening';
+    if (this.timeEl.textContent < NOON) return 'good morning';
+    if (this.timeEl.textContent < AFTERNOON) return 'good afternoon';
+    if (this.timeEl.textContent >= AFTERNOON) return 'good evening';
   }
 
   _renderBG() {
     //--> Render the Background Image
     if (window.innerWidth > 1130) {
-      this.timeEl.textContent >= '17:00'
+      this.timeEl.textContent >= AFTERNOON
         ? (this.bg.style.backgroundImage = `url(${desktopNightBg})`)
         : (this.bg.style.backgroundImage = `url(${desktopDayBg})`);
     }
     if (window.innerWidth < 1130) {
-      this.timeEl.textContent >= '17:00'
+      this.timeEl.textContent >= AFTERNOON
         ? (this.bg.style.backgroundImage = `url(${tabletNightBg})`)
         : (this.bg.style.backgroundImage = `url(${tabletDayBg})`);
     }
     if (window.innerWidth < 660) {
-      this.timeEl.textContent >= '17:00'
+      this.timeEl.textContent >= AFTERNOON
         ? (this.bg.style.backgroundImage = `url(${mobileNightBg})`)
         : (this.bg.style.backgroundImage = `url(${mobileDayBg})`);
     }
@@ -49,34 +51,29 @@ class TimeView {
   }
 
   renderTime(time, countryCode, timeZone, country) {
-    //--> Render the Background Image Responsively
-    this._renderBG();
-
     setTimeout(() => {
+      //--> Render the Time, Country Code, and Timezone
+      this.timeEl.textContent = time.slice(11, 16);
+      this.countryCodeEl.textContent = countryCode;
+      this.timeZoneEL.textContent = `IN ${country}, ${timeZone.slice(7)}`;
+
+      [this.iconEL, this.greetingEL, this.timeEl, this.timeZoneEL].forEach(
+        (el) => (el.style.opacity = '1')
+      );
+
+      //--> Render the Background Image Responsively
+      this._renderBG();
+
       //--> Render the Sun or Moon Icon
-      this.iconEL.style.opacity = '1';
-      this.timeEl.textContent < '17:00'
-        ? this.iconEL.insertAdjacentHTML(
-            'afterbegin',
-            `<i class='fas fa-sun'></i>`
-          )
-        : this.iconEL.insertAdjacentHTML(
-            'afterbegin',
-            `<i class='fas fa-moon'></i>`
-          );
+      this.iconEL.insertAdjacentHTML(
+        'afterbegin',
+        `<i class='fas fa-${
+          this.timeEl.textContent < AFTERNOON ? 'sun' : 'moon'
+        }'></i>`
+      );
 
       //--> Render the Greeting
-      this.greetingEL.style.opacity = '1';
       this.greetingEL.textContent = `${this._greeting()}, it's currently`;
-
-      //--> Render the Time, Country Code, and Timezone
-      this.timeEl.style.opacity = '1';
-      this.timeEl.textContent = time.slice(11, 16);
-
-      this.countryCodeEl.textContent = countryCode;
-
-      this.timeZoneEL.style.opacity = '1';
-      this.timeZoneEL.textContent = `IN ${country}, ${timeZone.slice(7)}`;
     }, 1000);
   }
 }

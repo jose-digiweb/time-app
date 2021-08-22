@@ -33,22 +33,7 @@
   overflow: hidden;
   transform-origin: bottom;
   transform: scaleY(0);
-
   transition: transform 500ms ease-in-out;
-  // animation-name: c;
-  // animation-duration: 1s;
-  // animation-fill-mode: forwards;
-
-  // @keyframes c {
-  //   from {
-  //     transform: scaleY(0);
-  //   }
-  //   to {
-  //     transform: scaleY(1);
-  //   }
-  // }
-
-  // display: none;
 
   @media screen and(max-width: 1130px) {
     padding-left: 64px;

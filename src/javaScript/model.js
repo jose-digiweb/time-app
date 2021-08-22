@@ -28,7 +28,6 @@ export const loadQuote = async () => {
 export const loadTime = async () => {
   try {
     const timeData = await helper.fetchData(TIME_URL);
-    console.log(timeData);
 
     state.time = {
       countryCode: timeData.abbreviation,

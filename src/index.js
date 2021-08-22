@@ -12,8 +12,6 @@ import TimeView from './javaScript/views/timeView';
 import MoreDetailsView from './javaScript/views/moreDetailsView';
 import { fullScreenMode } from './javaScript/views/fullscreenMode';
 
-// console.log(document.querySelector('.quote').clientHeight);
-
 const quoteControl = async () => {
   try {
     //--> Render Loading Spinner

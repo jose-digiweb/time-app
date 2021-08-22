@@ -42,11 +42,6 @@ class MoreDetailsView {
         this.wrapper.style.justifyContent = 'flex-end';
         this.wrapper.style.paddingBottom = '324px';
       }
-
-      // if (window.innerWidth > 660) {
-      //   this.wrapper.style.justifyContent = 'flex-end';
-      //   this.wrapper.style.paddingBottom = '500px';
-      // }
     }, 100);
 
     this.btnMoreEl.style.display = 'none';
