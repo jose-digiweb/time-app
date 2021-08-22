@@ -7,6 +7,7 @@ import mobileNightBg from '../../assets/mobile/bg-image-nighttime.jpg';
 import mobileDayBg from '../../assets/mobile/bg-image-daytime.jpg';
 
 class TimeView {
+  timeWrapper = document.querySelector('.country__code');
   timeEl = document.querySelector('.time');
   countryCodeEl = document.querySelector('.country__code');
   timeZoneEL = document.querySelector('.city__text');
@@ -41,7 +42,10 @@ class TimeView {
   }
 
   renderSpinner() {
-    this.timeEl.insertAdjacentHTML('afterbegin', '<div class="spinner"></div>');
+    this.timeWrapper.insertAdjacentHTML(
+      'afterbegin',
+      '<div class="spinner"></div>'
+    );
   }
 
   renderTime(time, countryCode, timeZone) {
@@ -50,6 +54,7 @@ class TimeView {
 
     setTimeout(() => {
       //--> Render the Sun or Moon Icon
+      this.iconEL.style.opacity = '1';
       this.timeEl.textContent < '17:00'
         ? this.iconEL.insertAdjacentHTML(
             'afterbegin',
@@ -61,11 +66,16 @@ class TimeView {
           );
 
       //--> Render the Greeting
+      this.greetingEL.style.opacity = '1';
       this.greetingEL.textContent = `${this._greeting()}, it's currently`;
 
       //--> Render the Time, Country Code, and Timezone
+      this.timeEl.style.opacity = '1';
       this.timeEl.textContent = time.slice(11, 16);
+
       this.countryCodeEl.textContent = countryCode;
+
+      this.timeZoneEL.style.opacity = '1';
       this.timeZoneEL.textContent = `IN ${timeZone
         .toUpperCase()
         .split('/')

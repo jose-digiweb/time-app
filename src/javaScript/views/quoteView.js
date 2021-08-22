@@ -4,14 +4,15 @@ class QuoteView {
   reloadBtn = document.querySelector('.reload__btn');
 
   renderSpinner() {
-    this.quoteEl.textContent = '';
-    this.quoteEl.insertAdjacentHTML(
+    this.authorEl.textContent = '';
+    this.authorEl.insertAdjacentHTML(
       'afterbegin',
       '<div class="spinner"></div>'
     );
   }
 
   renderQuote(content, author) {
+    this.quoteEl.style.opacity = '0.8';
     this.quoteEl.textContent = `" ${content} "`;
     this.authorEl.textContent = author;
   }

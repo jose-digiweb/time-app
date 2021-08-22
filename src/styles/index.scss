@@ -80,7 +80,9 @@
     line-height: 28px;
     margin-right: 15px;
     margin-bottom: 13px;
-    opacity: 0.8;
+
+    opacity: 0;
+    transition: opacity 800ms ease-in;
 
     @media only screen and(max-width: 660px) {
       font-size: 12px;
@@ -139,6 +141,8 @@
 
       .sun__icon {
         margin-right: 16px;
+        opacity: 0;
+        transition: opacity 800ms ease-in;
       }
 
       .greeting__text {
@@ -146,6 +150,8 @@
         line-height: 28px;
         letter-spacing: 4px;
         text-transform: uppercase;
+        opacity: 0;
+        transition: opacity 800ms ease-in;
 
         @media only screen and(max-width: 1130px) {
           font-size: 18px;
@@ -187,6 +193,8 @@
         font-size: 190px;
         font-weight: bold;
         margin-right: 11px;
+        opacity: 0;
+        transition: opacity 800ms ease-in;
 
         @media only screen and(max-width: 1130px) {
           font-size: 175px;
@@ -240,6 +248,8 @@
         letter-spacing: 4.8px;
         font-weight: 700;
         color: variables.$white;
+        opacity: 0;
+        transition: opacity 800ms ease-in;
 
         @media only screen and(max-width: 1130px) {
           font-size: 18px;
