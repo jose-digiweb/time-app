@@ -9,6 +9,7 @@ import './styles/index.scss';
 import * as model from './javaScript/model';
 import QuoteView from './javaScript/views/quoteView';
 import TimeView from './javaScript/views/timeView';
+import { fullScreenMode } from './javaScript/views/fullscreenMode';
 
 const quoteControl = async () => {
   try {
@@ -45,6 +46,7 @@ const TimeControl = async () => {
 };
 
 const init = () => {
+  fullScreenMode();
   QuoteView.handleQuoteGenerate(quoteControl);
   TimeControl();
 };

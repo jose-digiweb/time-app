@@ -21,10 +21,6 @@ class TimeView {
     if (this.timeEl.textContent >= '17:00') return 'good evening';
   }
 
-  renderSpinner() {
-    this.timeEl.insertAdjacentHTML('afterbegin', '<div class="spinner"></div>');
-  }
-
   _renderBG() {
     //--> Render the Background Image
     if (window.innerWidth > 1130) {
@@ -44,31 +40,37 @@ class TimeView {
     }
   }
 
+  renderSpinner() {
+    this.timeEl.insertAdjacentHTML('afterbegin', '<div class="spinner"></div>');
+  }
+
   renderTime(time, countryCode, timeZone) {
-    //--> Render the Time, Country Code, and Timezone
-    this.timeEl.textContent = time.slice(11, 16);
-    this.countryCodeEl.textContent = countryCode;
-    this.timeZoneEL.textContent = `IN ${timeZone
-      .toUpperCase()
-      .split('/')
-      .join(', ')}`;
-
-    //--> Render the Sun or Moon Icon
-    this.timeEl.textContent < '17:00'
-      ? this.iconEL.insertAdjacentHTML(
-          'afterbegin',
-          `<i class='fas fa-sun'></i>`
-        )
-      : this.iconEL.insertAdjacentHTML(
-          'afterbegin',
-          `<i class='fas fa-moon'></i>`
-        );
-
-    //--> Render the Greeting
-    this.greetingEL.textContent = `${this._greeting()}, it's currently`;
-
     //--> Render the Background Image Responsively
-    // this._renderBG();
+    this._renderBG();
+
+    setTimeout(() => {
+      //--> Render the Sun or Moon Icon
+      this.timeEl.textContent < '17:00'
+        ? this.iconEL.insertAdjacentHTML(
+            'afterbegin',
+            `<i class='fas fa-sun'></i>`
+          )
+        : this.iconEL.insertAdjacentHTML(
+            'afterbegin',
+            `<i class='fas fa-moon'></i>`
+          );
+
+      //--> Render the Greeting
+      this.greetingEL.textContent = `${this._greeting()}, it's currently`;
+
+      //--> Render the Time, Country Code, and Timezone
+      this.timeEl.textContent = time.slice(11, 16);
+      this.countryCodeEl.textContent = countryCode;
+      this.timeZoneEL.textContent = `IN ${timeZone
+        .toUpperCase()
+        .split('/')
+        .join(', ')}`;
+    }, 1000);
   }
 }
 

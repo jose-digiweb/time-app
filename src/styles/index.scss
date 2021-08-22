@@ -11,10 +11,11 @@
   overflow: auto;
 
   background-color: black;
-  background-image: url('../assets/desktop/bg-image-daytime.jpg');
+  background-image: url('../assets/bg-load.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center !important;
+  transition: all 500ms ease-in-out;
 
   @media only screen and(max-width: 1130px) {
     background-image: url('../assets/tablet/bg-image-daytime.jpg');
@@ -39,9 +40,7 @@
   height: 100vh;
   top: 0;
   left: 0;
-  opacity: 0.8;
-
-  // inset: 0;
+  opacity: 0.7;
 }
 
 .wrapper {
@@ -52,7 +51,6 @@
   flex-direction: column;
   justify-content: space-between;
   z-index: 2;
-
   padding-top: 56px;
   padding-bottom: 98px;
 
@@ -74,6 +72,7 @@
   max-width: 573px;
   display: flex;
   z-index: 2;
+
   // display: none;
 
   .quote__text {
