@@ -18,14 +18,14 @@
   transition: all 500ms ease-in-out;
 
   @media only screen and(max-width: 1130px) {
-    background-image: url('../assets/tablet/bg-image-daytime.jpg');
+    background-image: url('../assets/gb-load-tablet.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
   }
 
   @media only screen and(max-width: 660px) {
-    background-image: url('../assets/mobile/bg-image-daytime.jpg');
+    background-image: url('../assets/gb-load-mobile.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
