@@ -47,12 +47,15 @@ class TimeView {
 
   renderMessage() {
     this.fullscreenMessage.style.display = 'block';
-    this.fullscreenMessage.style.opacity = '1';
-  }
 
-  deleteMessage() {
-    this.fullscreenMessage.style.display = 'none';
-    this.fullscreenMessage.style.opacity = '0';
+    setTimeout(() => {
+      this.fullscreenMessage.style.opacity = '1';
+    }, 500);
+
+    setTimeout(() => {
+      this.fullscreenMessage.style.display = 'none';
+      this.fullscreenMessage.style.opacity = '0';
+    }, 5000);
   }
 
   renderSpinner() {
@@ -87,9 +90,6 @@ class TimeView {
 
     //--> Render the Background Image Responsively
     this._renderBG();
-
-    //--> Deleting Fullscreen request message
-    this.deleteMessage();
   }
 }
 

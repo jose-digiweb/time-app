@@ -23,9 +23,6 @@ const quoteControl = async () => {
 
     //--> Rendering the Quote
     QuoteView.renderQuote(text, author);
-
-    //--> Rendering Fullscreen request message
-    TimeView.renderMessage();
   } catch (error) {
     console.log(error);
   }
@@ -35,6 +32,9 @@ const TimeControl = async () => {
   try {
     //--> Render Loading Spinner
     TimeView.renderSpinner();
+
+    //--> Rendering Fullscreen request message
+    TimeView.renderMessage();
 
     //--> Loading the Time Data
     await model.loadTime();
