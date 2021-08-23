@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const mode =
   process.env.NODE_ENV === 'production' ? 'production' : 'development';
@@ -52,6 +53,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
+    new FaviconsWebpackPlugin('./src/assets/favicon-32x32.png'),
   ],
 
   resolve: {
