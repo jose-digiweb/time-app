@@ -17,11 +17,11 @@ const quoteControl = async () => {
     //--> Render Loading Spinner
     QuoteView.renderSpinner();
 
-    //--> Loading the Quotes
+    //--> Loading the Quote
     await model.loadQuote();
     const { text, author } = model.state.quote;
 
-    //-->Rendering the Quotes
+    //-->Rendering the Quote
     QuoteView.renderQuote(text, author);
   } catch (error) {
     console.log(error);
@@ -36,8 +36,6 @@ const TimeControl = async () => {
     //--> Loading the Time Data
     await model.loadTime();
 
-    await model.loadIP();
-
     const {
       countryCode,
       dateTime,
@@ -51,6 +49,7 @@ const TimeControl = async () => {
     //-->Rendering the Time Infos
     TimeView.renderTime(dateTime, countryCode, timeZone, country);
 
+    //-->Rendering More Details Infos
     MoreDetailsView.renderMoreDetails(timeZone, weekDay, yearDay, weekNumber);
   } catch (error) {
     console.log(error);

@@ -29,26 +29,17 @@ export const loadTime = async () => {
   try {
     const timeData = await helper.fetchData(TIME_URL);
 
+    const ipData = await helper.fetchData(IP2_URL);
+
     state.time = {
       countryCode: timeData.abbreviation,
       dateTime: timeData.datetime,
       weekDay: timeData.day_of_week,
       yearDay: timeData.day_of_year,
-      timeZone: timeData.timezone,
+      timeZone: timeData.timezone.split('/'),
       weekNumber: timeData.week_number,
+      country: ipData.country_name,
     };
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-export const loadIP = async () => {
-  try {
-    const ipData = await helper.fetchData(IP2_URL);
-
-    console.log(ipData);
-
-    state.time.country = ipData.country_name;
   } catch (error) {
     console.log(error);
   }

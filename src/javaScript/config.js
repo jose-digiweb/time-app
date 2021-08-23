@@ -8,5 +8,3 @@ export const IP2_URL =
 
 export const AFTERNOON = '17:00';
 export const NOON = '12:00';
-
-// 'https://api.ipgeolocation.io/ipgeo?apiKey=API_KEY';

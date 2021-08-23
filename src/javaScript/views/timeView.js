@@ -55,7 +55,7 @@ class TimeView {
       //--> Render the Time, Country Code, and Timezone
       this.timeEl.textContent = time.slice(11, 16);
       this.countryCodeEl.textContent = countryCode;
-      this.timeZoneEL.textContent = `IN ${country}, ${timeZone.slice(7)}`;
+      this.timeZoneEL.textContent = `IN ${country}, ${timeZone[1]}`;
 
       [this.iconEL, this.greetingEL, this.timeEl, this.timeZoneEL].forEach(
         (el) => (el.style.opacity = '1')
