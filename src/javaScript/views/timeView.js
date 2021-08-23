@@ -88,7 +88,8 @@ class TimeView {
     //--> Render the Background Image Responsively
     this._renderBG();
 
-    // this.deleteMessage();
+    //--> Deleting Fullscreen request message
+    this.deleteMessage();
   }
 }
 

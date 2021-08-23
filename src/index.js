@@ -21,10 +21,11 @@ const quoteControl = async () => {
     await model.loadQuote();
     const { text, author } = model.state.quote;
 
-    //-->Rendering the Quote
+    //--> Rendering the Quote
     QuoteView.renderQuote(text, author);
 
-    // TimeView.renderMessage();
+    //--> Rendering Fullscreen request message
+    TimeView.renderMessage();
   } catch (error) {
     console.log(error);
   }
