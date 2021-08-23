@@ -17,6 +17,8 @@ class TimeView {
   greetingEL = document.querySelector('.greeting__text');
   iconEL = document.querySelector('.sun__icon');
   bg = document.querySelector('.bg');
+  wrapper = document.querySelector('.wrapper');
+  fullscreenMessage = document.querySelector('.fullscreen__message');
 
   _greeting() {
     if (this.timeEl.textContent < NOON) return 'good morning';
@@ -43,6 +45,16 @@ class TimeView {
     }
   }
 
+  renderMessage() {
+    this.fullscreenMessage.style.display = 'block';
+    this.fullscreenMessage.style.opacity = '1';
+  }
+
+  deleteMessage() {
+    this.fullscreenMessage.style.display = 'none';
+    this.fullscreenMessage.style.opacity = '0';
+  }
+
   renderSpinner() {
     this.timeWrapper.insertAdjacentHTML(
       'afterbegin',
@@ -61,9 +73,6 @@ class TimeView {
         (el) => (el.style.opacity = '1')
       );
 
-      //--> Render the Background Image Responsively
-      this._renderBG();
-
       //--> Render the Sun or Moon Icon
       this.iconEL.insertAdjacentHTML(
         'afterbegin',
@@ -75,6 +84,11 @@ class TimeView {
       //--> Render the Greeting
       this.greetingEL.textContent = `${this._greeting()}, it's currently`;
     }, 1000);
+
+    //--> Render the Background Image Responsively
+    this._renderBG();
+
+    this.deleteMessage();
   }
 }
 

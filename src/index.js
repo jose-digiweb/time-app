@@ -23,6 +23,8 @@ const quoteControl = async () => {
 
     //-->Rendering the Quote
     QuoteView.renderQuote(text, author);
+
+    TimeView.renderMessage();
   } catch (error) {
     console.log(error);
   }
