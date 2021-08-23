@@ -49,6 +49,9 @@ const TimeControl = async () => {
       country,
     } = model.state.time;
 
+    //--> Render the Background Image Responsively
+    TimeView.renderBG(dateTime.slice(11, 16));
+
     //-->Rendering the Time Infos
     TimeView.renderTime(dateTime, countryCode, timeZone, country);
 

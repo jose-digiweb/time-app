@@ -26,20 +26,20 @@ class TimeView {
     if (this.timeEl.textContent >= AFTERNOON) return 'good evening';
   }
 
-  _renderBG() {
+  renderBG(time) {
     //--> Render the Background Image
     if (window.innerWidth > 1130) {
-      this.timeEl.textContent >= AFTERNOON
+      time >= '17:00'
         ? (this.bg.style.backgroundImage = `url(${desktopNightBg})`)
         : (this.bg.style.backgroundImage = `url(${desktopDayBg})`);
     }
     if (window.innerWidth < 1130) {
-      this.timeEl.textContent >= AFTERNOON
+      time >= AFTERNOON
         ? (this.bg.style.backgroundImage = `url(${tabletNightBg})`)
         : (this.bg.style.backgroundImage = `url(${tabletDayBg})`);
     }
     if (window.innerWidth < 660) {
-      this.timeEl.textContent >= AFTERNOON
+      time >= AFTERNOON
         ? (this.bg.style.backgroundImage = `url(${mobileNightBg})`)
         : (this.bg.style.backgroundImage = `url(${mobileDayBg})`);
     }
@@ -55,7 +55,7 @@ class TimeView {
     setTimeout(() => {
       this.fullscreenMessage.style.display = 'none';
       this.fullscreenMessage.style.opacity = '0';
-    }, 5000);
+    }, 4000);
   }
 
   renderSpinner() {
@@ -87,9 +87,6 @@ class TimeView {
       //--> Render the Greeting
       this.greetingEL.textContent = `${this._greeting()}, it's currently`;
     }, 1000);
-
-    //--> Render the Background Image Responsively
-    this._renderBG();
   }
 }
 
