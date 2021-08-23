@@ -88,7 +88,7 @@ class TimeView {
     //--> Render the Background Image Responsively
     this._renderBG();
 
-    this.deleteMessage();
+    // this.deleteMessage();
   }
 }
 

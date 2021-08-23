@@ -24,7 +24,7 @@ const quoteControl = async () => {
     //-->Rendering the Quote
     QuoteView.renderQuote(text, author);
 
-    TimeView.renderMessage();
+    // TimeView.renderMessage();
   } catch (error) {
     console.log(error);
   }

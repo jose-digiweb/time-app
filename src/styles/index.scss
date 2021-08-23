@@ -92,10 +92,15 @@
   box-shadow: 5px 8px 15px rgba(250, 250, 250, 0.2);
   z-index: 5;
 
-  opacity: 0;
-  display: none;
+  // opacity: 0;
+  // display: none;
 
   transition: opacity 1s ease-in-out;
+
+  @media only screen and(max-width: 660px) {
+    font-size: 1rem;
+    padding: 1rem;
+  }
 }
 
 .quote {
