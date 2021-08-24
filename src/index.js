@@ -68,8 +68,6 @@ const init = () => {
   MoreDetailsView.handleShowMore();
   MoreDetailsView.handleShowLess();
   TimeControl();
-
-  console.log(process.env.API2_KEY);
 };
 
 init();
