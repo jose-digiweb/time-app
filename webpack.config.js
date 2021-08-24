@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
+const { EnvironmentPlugin } = require('webpack');
+
 const mode =
   process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
@@ -54,6 +56,7 @@ module.exports = {
       template: './src/index.html',
     }),
     new FaviconsWebpackPlugin('./src/assets/favicon-32x32.png'),
+    new EnvironmentPlugin({ API2_KEY: 'e213673b39ba49de89f47e444c96297f' }),
   ],
 
   resolve: {
@@ -62,7 +65,7 @@ module.exports = {
 
   devtool: 'source-map',
   devServer: {
-    contentBase: './dist',
+    // contentBase: './dist',
     hot: true,
   },
 };

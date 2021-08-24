@@ -30,6 +30,7 @@
     "core-js": "^3.16.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
+    "dotenv-webpack": "^7.0.3",
     "favicons": "^6.2.2",
     "favicons-webpack-plugin": "^5.0.2",
     "html-webpack-plugin": "^5.3.2",
@@ -42,6 +43,6 @@
     "sass-loader": "^12.1.0",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^4.0.0"
   }
 }
