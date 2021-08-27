@@ -68,6 +68,7 @@ const init = () => {
   MoreDetailsView.handleShowMore();
   MoreDetailsView.handleShowLess();
   TimeControl();
+  model.netFetch();
 };
 
 init();
