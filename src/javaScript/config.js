@@ -2,7 +2,7 @@ export const QUOTE_URL = 'https://api.quotable.io/random';
 
 export const TIME_URL = 'https://worldtimeapi.org/api/ip';
 
-export const IP_URL = `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.IP_KEY}`;
+export const IP_URL = `https://api.ipgeolocation.io/getip`;
 
 export const NETLIFY_URL = `/.netlify/functions/fetchLocation/fetchLocation.js`;
 

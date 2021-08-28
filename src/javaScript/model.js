@@ -5,7 +5,6 @@ import 'core-js/stable';
 //--> Importing Helper Functions and Values
 import * as helper from './helper';
 import { QUOTE_URL, TIME_URL, IP_URL, NETLIFY_URL } from './config';
-import axios from 'axios';
 
 export const state = {
   quote: {
@@ -28,20 +27,30 @@ export const loadQuote = async () => {
 
 export const loadTime = async () => {
   try {
-    const timeData = await helper.fetchData(TIME_URL);
+    const { ip } = await helper.fetchData(IP_URL);
 
-    const { ip } = await helper.fetchData('https://api.ipgeolocation.io/getip');
-
-    const key = process.env.IP_KEY;
+    const timeData = await helper.fetchData(`${TIME_URL}/ip/${ip}`);
 
     const ipData = await helper.fetchData(`${NETLIFY_URL}?ip=${ip}`);
 
-    console.log(ipData);
-    console.log(ip);
+    const timeStamp = timeData.unixtime;
+
+    const language = ipData.languages.split(',')[0];
+
+    const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      timeZone: timeData.timezone,
+      timeZoneName: 'short',
+    };
+
+    const time = Intl.DateTimeFormat(`${language}`, options)
+      .format(timeStamp)
+      .split(' ');
 
     state.time = {
-      countryCode: timeData.abbreviation,
-      dateTime: timeData.datetime,
+      countryCode: time[1],
+      time: time[0],
       weekDay: timeData.day_of_week,
       yearDay: timeData.day_of_year,
       timeZone: timeData.timezone.split('/'),
@@ -52,18 +61,3 @@ export const loadTime = async () => {
     console.log(error);
   }
 };
-
-// export const getIp = async () => {
-//   const ipRes = await fetch('https://api.ipgeolocation.io/getip');
-
-//   const { ip } = await ipRes.json();
-
-//   const infoRes = await fetch(
-//     `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.IP_KEY}&ip=${ip}`
-//   );
-
-//   const infoData = await infoRes.json();
-
-//   console.log(ip);
-//   console.log(infoData);
-// };

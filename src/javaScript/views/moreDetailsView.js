@@ -10,7 +10,7 @@ class MoreDetailsView {
   wrapper = document.querySelector('.wrapper');
 
   renderMoreDetails(timezone, currentWeek, dayYear, weekNumber) {
-    this.timezone.textContent = timezone;
+    this.timezone.textContent = timezone.join('/');
     this.currentWeek.textContent = currentWeek;
     this.dayYear.textContent = dayYear;
     this.weekNumber.textContent = weekNumber;

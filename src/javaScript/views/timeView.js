@@ -68,7 +68,7 @@ class TimeView {
   renderTime(time, countryCode, timeZone, country) {
     setTimeout(() => {
       //--> Render the Time, Country Code, and Timezone
-      this.timeEl.textContent = time.slice(11, 16);
+      this.timeEl.textContent = time;
       this.countryCodeEl.textContent = countryCode;
       this.timeZoneEL.textContent = `IN ${country}, ${timeZone[1]}`;
 

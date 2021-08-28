@@ -41,7 +41,7 @@ const TimeControl = async () => {
 
     const {
       countryCode,
-      dateTime,
+      time,
       weekDay,
       yearDay,
       timeZone,
@@ -50,10 +50,10 @@ const TimeControl = async () => {
     } = model.state.time;
 
     //--> Render the Background Image Responsively
-    TimeView.renderBG(dateTime.slice(11, 16));
+    TimeView.renderBG(time);
 
     //-->Rendering the Time Infos
-    TimeView.renderTime(dateTime, countryCode, timeZone, country);
+    TimeView.renderTime(time, countryCode, timeZone, country);
 
     //-->Rendering More Details Infos
     MoreDetailsView.renderMoreDetails(timeZone, weekDay, yearDay, weekNumber);
@@ -68,8 +68,6 @@ const init = () => {
   MoreDetailsView.handleShowMore();
   MoreDetailsView.handleShowLess();
   TimeControl();
-
-  // model.getIp();
 };
 
 init();
