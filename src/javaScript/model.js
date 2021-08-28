@@ -35,8 +35,6 @@ export const loadTime = async () => {
 
     const timeStamp = timeData.unixtime;
 
-    const language = ipData.languages.split(',')[0];
-
     const options = {
       hour: 'numeric',
       minute: 'numeric',
@@ -44,7 +42,7 @@ export const loadTime = async () => {
       timeZoneName: 'short',
     };
 
-    const time = Intl.DateTimeFormat(`${language}`, options)
+    const time = Intl.DateTimeFormat('en-UK', options)
       .format(timeStamp)
       .split(' ');
 
