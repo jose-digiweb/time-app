@@ -68,9 +68,8 @@ const init = () => {
   MoreDetailsView.handleShowMore();
   MoreDetailsView.handleShowLess();
   TimeControl();
-  // model.netFetch();
 
-  // model.newQuote();
+  // model.getIp();
 };
 
 init();

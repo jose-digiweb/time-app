@@ -1,9 +1,9 @@
 const axios = require('axios');
 
-const handler = async () => {
-  const key = process.env.IP_KEY;
+const handler = async (event) => {
+  const { key, ip } = event.queryStringParameters;
 
-  const IP_URL = `https://api.ipgeolocation.io/ipgeo?apiKey=${key}`;
+  const IP_URL = `https://api.ipgeolocation.io/ipgeo?apiKey=${key}&ip=${ip}`;
 
   try {
     const { data } = await axios.get(IP_URL);

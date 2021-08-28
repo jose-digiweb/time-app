@@ -30,9 +30,14 @@ export const loadTime = async () => {
   try {
     const timeData = await helper.fetchData(TIME_URL);
 
-    const ipData = await helper.fetchData(NETLIFY_URL);
+    const { ip } = await helper.fetchData('https://api.ipgeolocation.io/getip');
+
+    const key = process.env.IP_KEY;
+
+    const ipData = await helper.fetchData(`${NETLIFY_URL}?key=${key}&ip=${ip}`);
 
     console.log(ipData);
+    console.log(ip);
 
     state.time = {
       countryCode: timeData.abbreviation,
@@ -47,3 +52,18 @@ export const loadTime = async () => {
     console.log(error);
   }
 };
+
+// export const getIp = async () => {
+//   const ipRes = await fetch('https://api.ipgeolocation.io/getip');
+
+//   const { ip } = await ipRes.json();
+
+//   const infoRes = await fetch(
+//     `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.IP_KEY}&ip=${ip}`
+//   );
+
+//   const infoData = await infoRes.json();
+
+//   console.log(ip);
+//   console.log(infoData);
+// };
