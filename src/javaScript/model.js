@@ -34,7 +34,7 @@ export const loadTime = async () => {
 
     const key = process.env.IP_KEY;
 
-    const ipData = await helper.fetchData(`${NETLIFY_URL}?key=${key}&ip=${ip}`);
+    const ipData = await helper.fetchData(`${NETLIFY_URL}?ip=${ip}`);
 
     console.log(ipData);
     console.log(ip);
