@@ -4,7 +4,8 @@ import 'core-js/stable';
 
 //--> Importing Helper Functions and Values
 import * as helper from './helper';
-import { QUOTE_URL, TIME_URL, IP_URL } from './config';
+import { QUOTE_URL, TIME_URL, IP_URL, NETLIFY_URL } from './config';
+import axios from 'axios';
 
 export const state = {
   quote: {
@@ -29,7 +30,9 @@ export const loadTime = async () => {
   try {
     const timeData = await helper.fetchData(TIME_URL);
 
-    const ipData = await helper.fetchData(IP_URL);
+    const ipData = await helper.fetchData(NETLIFY_URL);
+
+    console.log(ipData);
 
     state.time = {
       countryCode: timeData.abbreviation,
@@ -40,20 +43,6 @@ export const loadTime = async () => {
       weekNumber: timeData.week_number,
       country: ipData.country_name,
     };
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-export const netFetch = async () => {
-  try {
-    const response = await fetch(
-      `/.netlify/functions/fetchLocation/fetchLocation.js`
-    );
-
-    const data = await response.json();
-
-    console.log(data);
   } catch (error) {
     console.log(error);
   }

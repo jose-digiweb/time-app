@@ -11,8 +11,8 @@ const mode =
 const target = mode === 'production' ? 'browserslist' : 'web';
 
 module.exports = {
-  mode: mode,
-  target: target,
+  mode: 'development',
+  target: 'browserslist',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -64,6 +64,7 @@ module.exports = {
 
   devtool: 'source-map',
   devServer: {
+    static: './dist',
     hot: true,
   },
 };

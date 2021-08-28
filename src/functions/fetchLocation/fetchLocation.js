@@ -1,16 +1,24 @@
-// Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
-const handler = async (event) => {
+const axios = require('axios');
+
+const handler = async () => {
+  const key = process.env.IP_KEY;
+
+  const IP_URL = `https://api.ipgeolocation.io/ipgeo?apiKey=${key}`;
+
   try {
-    const subject = event.queryStringParameters.name || 'World';
+    const { data } = await axios.get(IP_URL);
+
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: `Hello ${subject}` }),
-      // // more keys you can return:
-      // headers: { "headerName": "headerValue", ... },
-      // isBase64Encoded: true,
+      body: JSON.stringify(data),
     };
   } catch (error) {
-    return { statusCode: 500, body: error.toString() };
+    const { status, statusText, headers, data } = error.response;
+
+    return {
+      statusCode: status,
+      body: JSON.stringify({ status, statusText, headers, data }),
+    };
   }
 };
 
