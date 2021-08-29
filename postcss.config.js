@@ -1,3 +1,5 @@
+import 'postcss-100vh-fix';
+
 module.exports = {
-  plugins: ['postcss-preset-env', require('postcss-100vh-fix')],
+  plugins: ['postcss-preset-env', 'postcss-100vh-fix'],
 };
