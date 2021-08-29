@@ -32,36 +32,36 @@
     <div class="bg">
       <div class="wrapper">
         <p class="fullscreen__message">Double Click to go Fullscreen</p>
-        <div class="quote">
-          <div>
+        <header role="banner" class="quote">
+          <nav>
             <p class="quote__text"></p>
 
             <p class="author"></p>
-          </div>
+          </nav>
 
           <span class="reload__btn"><i class="fas fa-sync-alt"></i></span>
-        </div>
+        </header>
 
-        <div class="content">
-          <div class="clock">
-            <div class="greeting">
+        <main role="main" class="content">
+          <section class="clock">
+            <article class="greeting">
               <span class="sun__icon"></span>
 
               <p class="greeting__text"></p>
-            </div>
+            </article>
 
-            <div class="current__time">
+            <article class="current__time">
               <p class="time"></p>
 
               <p class="country__code"></p>
-            </div>
+            </article>
 
-            <div class="current__city">
+            <article class="current__city">
               <p class="city__text"></p>
-            </div>
-          </div>
+            </article>
+          </section>
 
-          <div class="btn__wrapper">
+          <section class="btn__wrapper">
             <button class="btn__more">
               more
 
@@ -73,37 +73,37 @@
 
               <i class="fas fa-chevron-up"></i>
             </button>
-          </div>
-        </div>
+          </section>
+        </main>
       </div>
 
-      <div class="more__details hideMoreDetails">
+      <footer role="complementary" class="more__details hideMoreDetails">
         <div class="details__wrapper">
-          <div class="left__details">
-            <div class="left__1">
+          <section class="left__details">
+            <article class="left__1">
               <p class="details__title">current timezone</p>
               <h4 class="details__text timezone"></h4>
-            </div>
+            </article>
 
-            <div class="left__2">
+            <article class="left__2">
               <p class="details__title">day of the year</p>
               <h4 class="details__text dayYear"></h4>
-            </div>
-          </div>
+            </article>
+          </section>
 
-          <div class="right__details">
-            <div class="right__1">
+          <section class="right__details">
+            <article class="right__1">
               <p class="details__title">Day of the week</p>
               <h4 class="details__text currentWeek"></h4>
-            </div>
+            </article>
 
-            <div class="right__2">
+            <article class="right__2">
               <p class="details__title">week number</p>
               <h4 class="details__text weekNumber"></h4>
-            </div>
-          </div>
+            </article>
+          </section>
         </div>
-      </div>
+      </footer>
     </div>
   </body>
 </html>
