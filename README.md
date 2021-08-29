@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/html5-sass-javascript-webpack-babel-axios-postcss-netlifycli-PNmwVwDut](https://www.frontendmentor.io/solutions/html5-sass-javascript-webpack-babel-axios-postcss-netlifycli-PNmwVwDut)
 - Live Site URL: [https://time-app-webpack.netlify.app/](https://time-app-webpack.netlify.app/)
 
 ## My process
