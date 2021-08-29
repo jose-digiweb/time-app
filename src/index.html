@@ -6,10 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <base href="/" />
 
-    <link rel="icon" type="image/png" href="./assets/favicon-32x32.png" />
-    <link rel="apple-touch-icon" href="./assets/favicon-32x32.png" />
+    <meta name="apple-mobile-web-app-title" />
+    <meta name="application-name" />
+
+    <link
+      rel="icon"
+      sizes="32x32"
+      type="image/png"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
 
     <title>Clock App</title>
 
@@ -31,9 +50,9 @@
   <body>
     <div class="bg">
       <div class="wrapper">
-        <header role="banner" class="quote">
+        <header class="quote">
           <nav>
-            <p class="quote__text"></p>
+            <h1 class="quote__text">hey</h1>
 
             <p class="author"></p>
           </nav>
@@ -41,35 +60,35 @@
           <span class="reload__btn"><i class="fas fa-sync-alt"></i></span>
         </header>
 
-        <main role="main" class="content">
+        <main class="content">
           <p class="fullscreen__message">Double Click to go Fullscreen</p>
 
           <section class="clock">
-            <article class="greeting">
+            <div class="greeting">
               <span class="sun__icon"></span>
 
-              <h1 class="greeting__text"></h1>
-            </article>
+              <h2 class="greeting__text">hey</h2>
+            </div>
 
-            <article class="current__time">
-              <h2 class="time"></h2>
+            <div class="current__time">
+              <h2 class="time">hey</h2>
 
               <p class="country__code"></p>
-            </article>
+            </div>
 
-            <article class="current__city">
+            <div class="current__city">
               <p class="city__text"></p>
-            </article>
+            </div>
           </section>
 
           <section class="btn__wrapper">
-            <button role="button" class="btn__more">
+            <button class="btn__more">
               more
 
               <i class="fas fa-chevron-down"></i>
             </button>
 
-            <button role="button" class="btn__less">
+            <button class="btn__less">
               less
 
               <i class="fas fa-chevron-up"></i>
@@ -78,30 +97,30 @@
         </main>
       </div>
 
-      <footer role="contentinfo" class="more__details hideMoreDetails">
+      <footer class="more__details hideMoreDetails">
         <div class="details__wrapper">
           <section class="left__details">
-            <article class="left__1">
+            <div class="left__1">
               <h3 class="details__title">current timezone</h3>
-              <h4 class="details__text timezone"></h4>
-            </article>
+              <h4 class="details__text timezone">hey</h4>
+            </div>
 
-            <article class="left__2">
+            <div class="left__2">
               <h3 class="details__title">day of the year</h3>
-              <h4 class="details__text dayYear"></h4>
-            </article>
+              <h4 class="details__text dayYear">hey</h4>
+            </div>
           </section>
 
           <section class="right__details">
-            <article class="right__1">
+            <div class="right__1">
               <h3 class="details__title">Day of the week</h3>
-              <h4 class="details__text currentWeek"></h4>
-            </article>
+              <h4 class="details__text currentWeek">hey</h4>
+            </div>
 
-            <article class="right__2">
+            <div class="right__2">
               <h3 class="details__title">week number</h3>
-              <h4 class="details__text weekNumber"></h4>
-            </article>
+              <h4 class="details__text weekNumber">hey</h4>
+            </div>
           </section>
         </div>
       </footer>
