@@ -336,6 +336,7 @@
       letter-spacing: 5px;
       text-transform: uppercase;
       padding-left: 28px;
+      color: variables.$lightBlack;
 
       @media only screen and(max-width: 660px) {
         font-size: 12px;
