@@ -10,11 +10,22 @@ import * as helper from './helper';
 import { QUOTE_URL, TIME_URL, IP_URL, NETLIFY_URL, NEW_URL } from './config';
 
 export const state = {
-  quote: {
-    text: '',
-    author: '',
-  },
+  quote: {},
   time: {},
+};
+
+export const loadQuote = async function () {
+  const quotes = await axios.get(QUOTE_URL, { timeout: 20000 });
+
+  //--> Saving Quotes in State
+  const {
+    data: { author, content },
+  } = quotes;
+
+  state.quote = {
+    text: content,
+    author: author,
+  };
 };
 
 export const loadData = async () => {
@@ -24,26 +35,15 @@ export const loadData = async () => {
       data: { ip },
     } = await axios.get(IP_URL);
 
-    //--> Fetching All Data
+    //--> Fetching Time Data and Netlify Function
     const data = await axios.all([
-      axios.get(QUOTE_URL, { timeout: 20000 }),
       axios.get(`${TIME_URL}/ip/${ip}`, { timeout: 20000 }),
       axios.get(`${NETLIFY_URL}?ip=${ip}`, { timeout: 20000 }),
     ]);
 
-    //--> Saving Quotes in State
-    const {
-      data: { author, content },
-    } = data[0];
-
-    state.quote = {
-      text: content,
-      author: author,
-    };
-
     //--> Saving User's Time Data in State
-    const { data: timeData } = data[1];
-    const { data: ipData } = data[2];
+    const { data: timeData } = data[0];
+    const { data: ipData } = data[1];
 
     const [currentTime, zone] = helper.unixtimeConvert(
       timeData.unixtime,

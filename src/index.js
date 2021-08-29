@@ -18,7 +18,7 @@ const quoteControl = async () => {
     QuoteView.renderSpinner();
 
     //--> Loading the Quotes
-    await model.loadData();
+    await model.loadQuote();
     const { text, author } = model.state.quote;
 
     //--> Rendering the Quote
