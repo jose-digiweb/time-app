@@ -3,8 +3,12 @@ class QuoteView {
   authorEl = document.querySelector('.author');
   reloadBtn = document.querySelector('.reload__btn');
 
-  renderSpinner() {
+  clear() {
     this.authorEl.textContent = '';
+  }
+
+  renderSpinner() {
+    this.clear();
     this.authorEl.insertAdjacentHTML(
       'afterbegin',
       '<div class="spinner"></div>'

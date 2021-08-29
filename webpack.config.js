@@ -11,8 +11,8 @@ const mode =
 const target = mode === 'production' ? 'browserslist' : 'web';
 
 module.exports = {
-  mode: mode,
-  target: target,
+  mode: 'development',
+  target: 'web',
 
   output: {
     path: path.resolve(__dirname, 'dist'),

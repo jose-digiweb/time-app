@@ -14,31 +14,40 @@ import { fullScreenMode } from './javaScript/views/fullscreenMode';
 
 const quoteControl = async () => {
   try {
-    //--> Render Loading Spinner
+    //--> Rendering the Loading Spinner
     QuoteView.renderSpinner();
 
-    //--> Loading the Quote
-    await model.loadQuote();
+    //--> Loading the Quotes
+    await model.loadData();
     const { text, author } = model.state.quote;
 
     //--> Rendering the Quote
     QuoteView.renderQuote(text, author);
   } catch (error) {
+    const errorMessage = `
+    Something went wrong, we couldn't get the data.
+    Please refresh the page or try again later.
+    We're very sorry for the inconvenience.
+    `;
+
+    window.alert(errorMessage);
+    QuoteView.clear();
     console.log(error);
   }
 };
 
 const TimeControl = async () => {
   try {
-    //--> Render Loading Spinner
+    //--> Rendering the Loading Spinner
     TimeView.renderSpinner();
 
     //--> Rendering Fullscreen request message
     TimeView.renderMessage();
 
     //--> Loading the Time Data
-    await model.loadTime();
+    await model.loadData();
 
+    //--> Extracting Data from State
     const {
       countryCode,
       time,
@@ -49,7 +58,7 @@ const TimeControl = async () => {
       country,
     } = model.state.time;
 
-    //--> Render the Background Image Responsively
+    //--> Rendering the Background Images Responsively
     TimeView.renderBG(time);
 
     //-->Rendering the Time Infos
@@ -58,6 +67,14 @@ const TimeControl = async () => {
     //-->Rendering More Details Infos
     MoreDetailsView.renderMoreDetails(timeZone, weekDay, yearDay, weekNumber);
   } catch (error) {
+    const errorMessage = `
+    Something went wrong, we couldn't get the data.
+    Please refresh the page or try again later.
+    We're very sorry for the inconvenience.
+    `;
+
+    window.alert(errorMessage);
+    QuoteView.clear();
     console.log(error);
   }
 };

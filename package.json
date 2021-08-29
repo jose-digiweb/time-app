@@ -37,6 +37,7 @@
     "mini-css-extract-plugin": "^2.2.0",
     "netlify-cli": "^6.7.5",
     "postcss": "^8.3.6",
+    "postcss-100vh-fix": "^1.0.2",
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",
     "regenerator-runtime": "^0.13.9",
