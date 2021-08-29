@@ -336,7 +336,7 @@
       letter-spacing: 5px;
       text-transform: uppercase;
       padding-left: 28px;
-      color: variables.$lightBlack;
+      color: variables.$gray;
 
       @media only screen and(max-width: 660px) {
         font-size: 12px;
@@ -345,7 +345,7 @@
       }
 
       &:hover {
-        color: variables.$gray;
+        color: variables.$lightBlack;
 
         i {
           background: variables.$gray;
