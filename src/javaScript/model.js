@@ -26,7 +26,7 @@ export const loadData = async () => {
 
     //--> Fetching All Data
     const data = await axios.all([
-      axios.get(QUOTE_URL, { timeout: 5000 }),
+      axios.get(QUOTE_URL, { timeout: 10000 }),
       axios.get(`${TIME_URL}/ip/${ip}`, { timeout: 10000 }),
       axios.get(`${NETLIFY_URL}?ip=${ip}`, { timeout: 10000 }),
     ]);
