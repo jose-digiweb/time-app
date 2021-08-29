@@ -7,7 +7,7 @@ import axios from 'axios';
 
 //--> Importing Helper Functions and Values
 import * as helper from './helper';
-import { QUOTE_URL, TIME_URL, IP_URL, NETLIFY_URL } from './config';
+import { QUOTE_URL, TIME_URL, IP_URL, NETLIFY_URL, NEW_URL } from './config';
 
 export const state = {
   quote: {
@@ -26,9 +26,9 @@ export const loadData = async () => {
 
     //--> Fetching All Data
     const data = await axios.all([
-      axios.get(QUOTE_URL, { timeout: 15000 }),
-      axios.get(`${TIME_URL}/ip/${ip}`, { timeout: 15000 }),
-      axios.get(`${NETLIFY_URL}?ip=${ip}`, { timeout: 15000 }),
+      axios.get(QUOTE_URL, { timeout: 20000 }),
+      axios.get(`${TIME_URL}/ip/${ip}`, { timeout: 20000 }),
+      axios.get(`${NETLIFY_URL}?ip=${ip}`, { timeout: 20000 }),
     ]);
 
     //--> Saving Quotes in State
