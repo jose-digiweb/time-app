@@ -28,7 +28,7 @@ export const loadQuote = async function () {
   };
 };
 
-export const loadData = async () => {
+export const loadTimeData = async () => {
   try {
     //--> Fetching User's IP Address
     const {
@@ -45,10 +45,9 @@ export const loadData = async () => {
     const { data: timeData } = data[0];
     const { data: ipData } = data[1];
 
-    const [currentTime, zone] = helper.unixtimeConvert(
-      timeData.unixtime,
-      timeData
-    );
+    const { datetime: currTime, abbreviation: zone } = timeData;
+
+    const currentTime = currTime.split('T')[1].split('.')[0].slice(0, 5);
 
     state.time = {
       countryCode: zone,

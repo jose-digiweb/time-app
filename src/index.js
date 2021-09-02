@@ -45,7 +45,7 @@ const TimeControl = async () => {
     TimeView.renderMessage();
 
     //--> Loading the Time Data
-    await model.loadData();
+    await model.loadTimeData();
 
     //--> Extracting Data from State
     const {

@@ -10,7 +10,7 @@ const mode =
 const target = mode === 'production' ? 'browserslist' : 'web';
 
 module.exports = {
-  mode: mode,
+  mode: 'development',
   target: target,
 
   output: {

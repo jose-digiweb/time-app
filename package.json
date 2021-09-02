@@ -34,7 +34,7 @@
     "favicons": "^6.2.2",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.2.0",
-    "netlify-cli": "^6.7.5",
+    "netlify-cli": "^6.8.4",
     "postcss": "^8.3.6",
     "postcss-100vh-fix": "^1.0.2",
     "postcss-loader": "^6.1.1",
