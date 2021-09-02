@@ -4,13 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const DotEnv = require('dotenv-webpack');
 
-const mode =
-  process.env.NODE_ENV === 'production' ? 'production' : 'development';
+const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 const target = mode === 'production' ? 'browserslist' : 'web';
 
 module.exports = {
-  mode: 'development',
+  mode: mode,
   target: target,
 
   output: {
